@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.64.93" id="pedidosVivosPageDef" Package="es.ramondin.pedidosvivos.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PedidosVivos" RangeSize="25" DataControl="AppModuleAMDataControl" id="PedidosVivosIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PedidosVivosIterator" id="PedidosVivos">
+      <nodeDefinition DefName="es.ramondin.pedidosvivos.model.views.PedidosVivosVO" Name="PedidosVivos0">
+        <AttrNames>
+          <Item Value="MpedAnoped"/>
+          <Item Value="MpedOrdped"/>
+          <Item Value="MpedLinped"/>
+          <Item Value="MpedCanped"/>
+          <Item Value="MpedIncrcom"/>
+          <Item Value="MpedAnulcom"/>
+          <Item Value="MpedIncrpla"/>
+          <Item Value="MpedAnulpla"/>
+          <Item Value="MpedCanser"/>
+          <Item Value="MpedCanfab"/>
+          <Item Value="MpedCanrec"/>
+          <Item Value="MpedStock"/>
+          <Item Value="Mpe2Antiguo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PedidosVivosIterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

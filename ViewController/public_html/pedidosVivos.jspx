@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:ExportarExcel="/ExportarExcelLib">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Pedidos Vivos">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelGroupLayout id="pgl1" layout="vertical">
+          <af:panelFormLayout id="pfl2">
+            <af:commandButton text="Refrescar Tabla" id="cb1" partialSubmit="true" actionListener="#{bindings.Execute.execute}" disabled="#{!bindings.Execute.enabled}"/>
+          </af:panelFormLayout>
+          <af:panelCollection id="pc1" inlineStyle="height:500px;width:914px">
+            <af:table value="#{bindings.PedidosVivos.collectionModel}" var="row" rows="#{bindings.PedidosVivos.rangeSize}"
+                      emptyText="#{bindings.PedidosVivos.viewable ? 'No data to display.' : 'Access Denied.'}" fetchSize="#{bindings.PedidosVivos.rangeSize}"
+                      rowBandingInterval="0" id="t1" partialTriggers=":::cb1">
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedAnoped.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="50"
+                         headerText="#{bindings.PedidosVivos.hints.MpedAnoped.label}" id="c7">
+                <af:outputText value="#{row.MpedAnoped}" id="ot3"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedOrdped.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="50"
+                         headerText="#{bindings.PedidosVivos.hints.MpedOrdped.label}" id="c13">
+                <af:outputText value="#{row.MpedOrdped}" id="ot7"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedLinped.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="50"
+                         headerText="#{bindings.PedidosVivos.hints.MpedLinped.label}" id="c11">
+                <af:outputText value="#{row.MpedLinped}" id="ot13"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedCanped.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="75"
+                         headerText="#{bindings.PedidosVivos.hints.MpedCanped.label}" id="c10">
+                <af:outputText value="#{row.MpedCanped}" id="ot5"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedIncrcom.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="75"
+                         headerText="#{bindings.PedidosVivos.hints.MpedIncrcom.label}" id="c4">
+                <af:outputText value="#{row.MpedIncrcom}" id="ot1"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedAnulcom.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="75"
+                         headerText="#{bindings.PedidosVivos.hints.MpedAnulcom.label}" id="c1">
+                <af:outputText value="#{row.MpedAnulcom}" id="ot9"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedIncrpla.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="75"
+                         headerText="#{bindings.PedidosVivos.hints.MpedIncrpla.label}" id="c6">
+                <af:outputText value="#{row.MpedIncrpla}" id="ot11"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedAnulpla.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="75"
+                         headerText="#{bindings.PedidosVivos.hints.MpedAnulpla.label}" id="c12">
+                <af:outputText value="#{row.MpedAnulpla}" id="ot6"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedCanser.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="75"
+                         headerText="#{bindings.PedidosVivos.hints.MpedCanser.label}" id="c2">
+                <af:outputText value="#{row.MpedCanser}" id="ot4"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedCanfab.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="75"
+                         headerText="#{bindings.PedidosVivos.hints.MpedCanfab.label}" id="c8">
+                <af:outputText value="#{row.MpedCanfab}" id="ot10"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedCanrec.name}" sortable="false" align="#{row != null ? 'right' : 'center'}" width="75"
+                         headerText="#{bindings.PedidosVivos.hints.MpedCanrec.label}" id="c9">
+                <af:outputText value="#{row.MpedCanrec}" id="ot2"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.MpedStock.name}" sortable="false" align="#{row != null ? null : 'center'}" width="40"
+                         headerText="#{bindings.PedidosVivos.hints.MpedStock.label}" id="c3">
+                <af:outputText value="#{row.MpedStock}" id="ot8"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.PedidosVivos.hints.Mpe2Antiguo.name}" sortable="false" align="#{row != null ? null : 'center'}" width="40"
+                         headerText="#{bindings.PedidosVivos.hints.Mpe2Antiguo.label}" id="c5">
+                <af:outputText value="#{row.Mpe2Antiguo}" id="ot12"/>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+          <ExportarExcel:CompDecExportarExcel id="cdee1" idTabla="pc1:t1" nombreHoja="Pedidos Vivos"/>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
